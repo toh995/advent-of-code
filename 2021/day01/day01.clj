@@ -1,4 +1,4 @@
-(ns day01
+(ns day01.day01
   (:require [clojure.string :as str]))
 
 ; returns a vector of integers
