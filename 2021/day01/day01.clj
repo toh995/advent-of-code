@@ -4,20 +4,20 @@
 ; returns a vector of integers
 (defn get-data [filename]
   (as-> filename $
-      (slurp $) ;read the file
-      (str/split $ #"\n") ;split the string into a vector of strings
-      (map read-string $))) ;convert strings to integers
+    (slurp $) ;read the file
+    (str/split $ #"\n") ;split the string into a vector of strings
+    (map read-string $))) ;convert strings to integers
 
 (defn part1 [numbers]
   (->> numbers
-    (partition 2 1) ;partition the numbers into pairs
-    (reduce
-     (fn [accum pair]
-       (as-> (apply - (reverse pair)) diff
-         (if (> diff 0)
-           (inc accum)
-           accum)))
-     0)))
+       (partition 2 1) ;partition the numbers into pairs
+       (reduce
+        (fn [accum pair]
+          (as-> (apply - (reverse pair)) diff
+            (if (pos? diff)
+              (inc accum)
+              accum)))
+        0)))
 
 (defn part2 [numbers]
   (->> numbers
