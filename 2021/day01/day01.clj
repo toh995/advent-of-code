@@ -22,7 +22,7 @@
 (defn part2 [numbers]
   (->> numbers
        (partition 3 1) ;parition the numbers into trios
-       (map #(apply + %1)) ;sum each trio
+       (map #(apply + %)) ;sum each trio
        (part1)))
 
 (defn main []
