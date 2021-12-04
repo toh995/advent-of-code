@@ -56,6 +56,5 @@
   (let [rows (get-data "./data.txt")]
     (println
      "PART 2:"
-    ;;  (compute-oxygen-val rows))))
      (part2 rows))))
 (main)
