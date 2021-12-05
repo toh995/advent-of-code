@@ -83,7 +83,6 @@
   (let [str-data (slurp "./data.txt")
         moves (parse-moves str-data)
         og-boards (parse-boards str-data)]
-    ;; (println (map #(count (first (% :matrix))) og-boards))))
     (println
      "PART 1:"
      (part1 moves og-boards)
