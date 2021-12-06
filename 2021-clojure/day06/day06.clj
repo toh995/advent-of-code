@@ -10,7 +10,7 @@
 (defn build-fish-map [fish-coll]
   (let [freq-map (frequencies fish-coll)
         keys (range 9)
-        vals (map (fn [key] (freq-map key 0)) keys)]
+        vals (map #(freq-map % 0) keys)]
     (zipmap keys vals)))
 
 (defn compute-new-fish-map [old-fish-map]
