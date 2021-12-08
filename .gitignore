@@ -4,3 +4,5 @@
 #clojure stuff
 .clj-kondo/*
 .lsp/*
+.calva/*
+.nrepl-port
