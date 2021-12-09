@@ -21,25 +21,22 @@
    [i (inc j)]
    [i (dec j)]])
 
-(defn get-adjacent-coords [[i j] i-max j-max]
-  (let [candidates (get-candidate-adjacent-coords [i j])]
+(defn get-adjacent-coords [coord i-max j-max]
+  (let [candidates (get-candidate-adjacent-coords coord)]
     (filter
      (fn [[i' j']] (and (<= 0 i' i-max) (<= 0 j' j-max)))
      candidates)))
 
 (defn coord-is-minimal? [matrix coord]
-  (let [[i j] coord
-        i-max (dec (count matrix))
+  (let [i-max (dec (count matrix))
         j-max (dec (count (first matrix)))
-        adjacent-coords (get-adjacent-coords [i j] i-max j-max)
-        fixed-val (get-in matrix [i j])]
+        adjacent-coords (get-adjacent-coords coord i-max j-max)]
     (every?
-     (fn ([[i' j']] (< fixed-val (get-in matrix [i' j']))))
+     #(< (get-in matrix coord) (get-in matrix %))
      adjacent-coords)))
 
 (defn compute-risk-level [matrix coord]
-  (let [[i j] coord]
-    (inc (get-in matrix [i j]))))
+  (inc (get-in matrix coord)))
 
 (defn adj-coord-in-basin? [matrix old-coord adj-coord]
   (<=
