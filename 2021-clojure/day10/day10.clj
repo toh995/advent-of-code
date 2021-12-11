@@ -1,4 +1,4 @@
-(ns day10.part01
+(ns day10.day10
   (:require [clojure.string :as str]))
 
 (defn get-lines [filename]
