@@ -59,9 +59,6 @@
   (loop [i 0
          pair-counts og-pair-counts
          char-counts og-char-counts]
-    ;; (println i)
-    ;; (when (= i 38)
-    ;;   (do (println "YOYO`")(println (update-pair-counts instructions pair-counts))))
     (if (< i num-iterations)
       (recur
        (inc i)
@@ -71,8 +68,6 @@
 
 (defn part2 [instructions og-pair-counts og-char-counts]
   (let [final-char-counts (perform-steps instructions og-pair-counts og-char-counts 40)]
-    ;; (println (apply max (vals final-char-counts)))
-    ;; (println (apply min (vals final-char-counts)))
     (as-> final-char-counts $
       (vals $)
       (-' (apply max $) (apply min $)))))
