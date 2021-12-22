@@ -1,6 +1,5 @@
 (ns day22.part02
-  (:require [clojure.string :as str])
-  (:require [clojure.set :as set]))
+  (:require [clojure.string :as str]))
 
 (defn get-coords [line-string]
   (let [coords-string (-> line-string
