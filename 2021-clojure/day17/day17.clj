@@ -1,5 +1,4 @@
-(ns day17.day17
-  (:require [clojure.string :as str]))
+(ns day17.day17)
 
 (defn sum-to [n]
   (/ (* n (inc n)) 2))
