@@ -77,7 +77,7 @@ parse1 :: String -> [Round]
 parse1 = mapMaybe parseLine1 . lines
 
 parseLine1 :: String -> Maybe Round
-parseLine1 [oppChar, _, meChar] =
+parseLine1 [oppChar, ' ', meChar] =
   let myMove = parseMe meChar
       oppMove = parseOpp oppChar
       result = getResult <$> myMove <*> oppMove
@@ -103,7 +103,7 @@ parse2 :: String -> [Round]
 parse2 = mapMaybe parseLine2 . lines
 
 parseLine2 :: String -> Maybe Round
-parseLine2 [oppChar, _, resultChar] =
+parseLine2 [oppChar, ' ', resultChar] =
   let oppMove = parseOpp oppChar
       result = parseResult resultChar
       myMove = getMyMove <$> result <*> oppMove
