@@ -73,10 +73,12 @@ main = do
 ------------------------------
 -- SECTION: Parsing, part 1 --
 ------------------------------
+type Line = String
+
 parse1 :: String -> [Round]
 parse1 = mapMaybe parseLine1 . lines
 
-parseLine1 :: String -> Maybe Round
+parseLine1 :: Line -> Maybe Round
 parseLine1 [oppChar, ' ', meChar] =
   let myMove = parseMe meChar
       oppMove = parseOpp oppChar
@@ -102,7 +104,7 @@ parseMe _ = Nothing
 parse2 :: String -> [Round]
 parse2 = mapMaybe parseLine2 . lines
 
-parseLine2 :: String -> Maybe Round
+parseLine2 :: Line -> Maybe Round
 parseLine2 [oppChar, ' ', resultChar] =
   let oppMove = parseOpp oppChar
       result = parseResult resultChar
