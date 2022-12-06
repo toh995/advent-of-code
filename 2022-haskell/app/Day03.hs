@@ -1,5 +1,3 @@
-{-# OPTIONS_GHC -Wall #-}
-
 module Day03 where
 
 import Data.Char
@@ -7,12 +5,12 @@ import Data.List
 
 type Line = [Char]
 
-fileName :: String
-fileName = "data.txt"
+filePath :: String
+filePath = "data/Day03.txt"
 
 main :: IO ()
 main = do
-  inputStr <- readFile fileName
+  inputStr <- readFile filePath
   let ls = lines inputStr
 
   let part1Answer = part1 ls

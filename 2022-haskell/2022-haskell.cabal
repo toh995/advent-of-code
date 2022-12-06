@@ -1,0 +1,21 @@
+cabal-version:      3.0
+name:               2022haskell
+version:            0.1.0.0
+build-type:         Simple
+data-files:         data/*.txt
+
+common warnings
+    ghc-options: -Wall
+
+executable 2022-haskell
+    import:           warnings
+    main-is:          Main.hs
+    other-modules:
+        Day01
+        Day02
+        Day03
+        Day04
+    build-depends:
+        base ^>=4.17.0.0,
+    hs-source-dirs:   app
+    default-language: GHC2021

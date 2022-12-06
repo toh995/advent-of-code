@@ -1,5 +1,3 @@
-{-# OPTIONS_GHC -Wall #-}
-
 module Day04 where
 
 import Data.List
@@ -12,15 +10,15 @@ data Range = Range [Int]
 
 type RangePair = (Range, Range)
 
-fileName :: String
-fileName = "data.txt"
+filePath :: String
+filePath = "data/Day04.txt"
 
 ----------------------
 -- SECTION: Main IO --
 ----------------------
 main :: IO ()
 main = do
-  inputStr <- readFile fileName
+  inputStr <- readFile filePath
   let rangePairs = parse inputStr
 
   let part1Answer = part1 rangePairs

@@ -1,5 +1,3 @@
-{-# OPTIONS_GHC -Wall #-}
-
 module Day02 where
 
 import Data.Maybe
@@ -55,12 +53,12 @@ getMyMove Loss oppMove = loser oppMove
 ----------------------
 -- SECTION: Main IO --
 ----------------------
-fileName :: String
-fileName = "data.txt"
+filePath :: String
+filePath = "data/Day02.txt"
 
 main :: IO ()
 main = do
-  inputStr <- readFile fileName
+  inputStr <- readFile filePath
 
   let rounds1 = parse1 inputStr
   let part1Answer = getScore rounds1

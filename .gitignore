@@ -1,11 +1,14 @@
 .idea/*
 *.DS_STORE
 
-#clojure stuff
+# clojure stuff
 .clj-kondo/*
 .lsp/*
 .calva/*
 .nrepl-port
 
-#java stuff
+# java stuff
 *.class
+
+# haskell stuff
+**/dist-newstyle/*
