@@ -1,6 +1,7 @@
 module Day04 where
 
 import Data.List
+import Data.List.Split
 import Data.Maybe
 
 type Line = String
@@ -35,7 +36,7 @@ parse = mapMaybe parseLine . lines
 
 parseLine :: Line -> Maybe RangePair
 parseLine s =
-  case (split ',' s) of
+  case (splitWhen (== ',') s) of
     ([s1, s2]) -> (,) <$> strToRange s1 <*> strToRange s2
     _ -> Nothing
 
@@ -46,19 +47,7 @@ strToRange s =
     ([start, end]) -> Just $ Range [start .. end]
     _ -> Nothing
   where
-    ints = map read . split '-' $ s
-
--- EXAMPLE: split '|' "a1|b1|c1" == ["a1", "b1", "c1"]
-split :: Eq a => a -> [a] -> [[a]]
-split _ [] = []
-split delim xs =
-  let sublist = takeWhile (/= delim) xs
-      rest =
-        fromMaybe []
-          . stripPrefix [delim]
-          . dropWhile (/= delim)
-          $ xs
-   in sublist : split delim rest
+    ints = map read . splitWhen (== '-') $ s
 
 -------------------------
 -- SECTION: main logic --

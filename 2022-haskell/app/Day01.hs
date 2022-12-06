@@ -1,7 +1,7 @@
 module Day01 where
 
 import Data.List
-import Data.Maybe
+import Data.List.Split
 
 filePath :: String
 filePath = "data/Day01.txt"
@@ -22,7 +22,7 @@ main = do
 parse :: String -> [[Int]]
 parse =
   map (map read)
-    . split ""
+    . splitWhen (== "")
     . lines
 
 computeTotals :: [[Int]] -> [Int]
@@ -30,16 +30,3 @@ computeTotals = map sum
 
 sortTotals :: [Int] -> [Int]
 sortTotals = reverse . sort
-
--- EXAMPLE
--- split "" ["1","","2","","3","4"] == [["1"], ["2"], ["3","4"]]
-split :: Eq a => a -> [a] -> [[a]]
-split _ [] = []
-split delim xs =
-  let sublist = takeWhile (/= delim) xs
-      rest =
-        fromMaybe []
-          . stripPrefix [delim]
-          . dropWhile (/= delim)
-          $ xs
-   in sublist : split delim rest

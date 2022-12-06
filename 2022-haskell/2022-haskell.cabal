@@ -17,5 +17,6 @@ executable 2022-haskell
         Day04
     build-depends:
         base ^>=4.17.0.0,
+        split ^>=0.2.3.5
     hs-source-dirs:   app
     default-language: GHC2021

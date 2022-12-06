@@ -2,6 +2,7 @@ module Day03 where
 
 import Data.Char
 import Data.List
+import Data.List.Split
 
 type Line = [Char]
 
@@ -62,12 +63,6 @@ charPriority c
   | isLower c = ord c - ord 'a' + 1
   | isUpper c = charPriority (toLower c) + 26
   | otherwise = 0
-
--- Break the given list into sublists of equal size
--- eg: chunksOf [1,2,3,4,5,6,7,8,9] == [[1,2,3],[4,5,6],[7,8,9]]
-chunksOf :: Int -> [a] -> [[a]]
-chunksOf _ [] = []
-chunksOf n xs = take n xs : chunksOf n (drop n xs)
 
 -- Given two lists, take the unique intersection of elements
 -- eg: intersectUniq [1,1,2,2] [2,2,1,1] == [1,2]
