@@ -1,7 +1,6 @@
 module Main where
 
--- import Day06 hiding (main)
-import qualified Day06
+import qualified Day05
 
 main :: IO ()
-main = Day06.main
+main = Day05.main
