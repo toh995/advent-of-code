@@ -18,8 +18,10 @@ executable 2022-haskell
         Day05
         Day06
         Day07
+        Day08
     build-depends:
         base ^>=4.17.0.0,
+        ghc,
         containers ^>=0.6.6,
         split ^>=0.2.3.5
     hs-source-dirs:   app
