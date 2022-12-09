@@ -33,10 +33,7 @@ instance Num a => Semigroup (Matrix a) where
 
 -- Fold the matrix, by iterating through all of the entries in the matrix
 instance Foldable Matrix where
-  foldr :: (a -> b -> b) -> b -> Matrix a -> b
-  foldr f z (Matrix rows) = foldr f' z rows
-    where
-      f' row acc = foldr f acc row
+  foldr f z (Matrix rows) = foldr f z (concat rows)
 
 ----------------------
 -- SECTION: Main IO --
