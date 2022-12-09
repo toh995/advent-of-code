@@ -5,7 +5,9 @@ build-type:         Simple
 data-files:         data/*.txt
 
 common warnings
-    ghc-options: -Wall
+    ghc-options:
+      -Wall
+      -fno-warn-orphans
 
 executable 2022-haskell
     import:           warnings
@@ -19,6 +21,7 @@ executable 2022-haskell
         Day06
         Day07
         Day08
+        Day09
     build-depends:
         base ^>=4.17.0.0,
         ghc,
