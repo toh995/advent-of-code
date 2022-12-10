@@ -60,9 +60,10 @@ computeSignalStrength values i = i * values !! (i-1)
 -- SECTION: Part 2 --
 ---------------------
 part2 :: [Value] -> String
-part2 values = buildDisplayString
-             . map computePixelChar
-             $ zip values (cycle [0..39])
+part2 values =
+  buildDisplayString
+  . map computePixelChar
+  $ zip values (cycle [0..39])
 
 computePixelChar :: (Value, Int) -> Char
 computePixelChar (v, idx)
