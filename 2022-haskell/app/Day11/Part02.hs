@@ -1,4 +1,4 @@
-module Day11.Part01 where
+module Day11.Part02 where
 
 import Control.Monad
 import Data.Bool
@@ -12,7 +12,7 @@ import Safe
 
 type Line = String
 
-type Item = Int
+type Divisor = Int
 
 data Monkey = Monkey {
   items :: [Item],
@@ -28,6 +28,18 @@ instance Show Monkey where
     ++ "inspectCount: " ++ show inspectCount
     ++ " items: " ++ show items
 
+type Item = IntMap Int
+
+intToItem :: [Divisor] -> Int -> Item
+intToItem divisors n =
+  foldr
+    f
+    IntMap.empty
+    divisors
+  where
+    f divisor m = IntMap.insert divisor (n `mod` divisor) m
+
+
 type MonkeyGroup = [Monkey]
 
 
@@ -39,22 +51,29 @@ main = do
   inputStr <- readFile filePath
   let monkeys = parseMonkeys . splitOn [""] . lines $ inputStr
 
-  let part1Answer = part1 monkeys
-  putStrLn $ "PART 1: " ++ show part1Answer
+  let part2Answer = part2 monkeys
+  putStrLn $ "PART 2: " ++ show part2Answer
 
 parseMonkeys :: [[Line]] -> IntMap Monkey 
-parseMonkeys = IntMap.fromList . mapMaybe parseMonkey
+parseMonkeys lss =
+  let divisors = mapMaybe parseDivisor lss
+      monkeys = IntMap.fromList . mapMaybe (parseMonkey divisors) $ lss
+   in monkeys
 
-parseMonkey :: [Line] -> Maybe (IntMap.Key, Monkey)
-parseMonkey ls =
+parseMonkey :: [Divisor] -> [Line] -> Maybe (IntMap.Key, Monkey)
+parseMonkey divisors ls =
   let key = parseKey ls
-      items = parseItems ls
+      items = parseItems divisors ls
       operation = parseOperation ls
-      test = parseTest ls
+      divisor = parseDivisor ls
       trueMonkey = parseTrueMonkey ls
       falseMonkey = parseFalseMonkey ls
-      getNextItem = (.) (`div` 3) <$> operation
-      testNextItem = (.) <$> test <*> getNextItem
+      getNextItem =
+        (.)
+          (IntMap.mapWithKey (flip mod))
+          <$> (IntMap.map <$> operation)
+      getNextModVal = (.) <$> (IntMap.findWithDefault (-1) <$> divisor) <*> getNextItem
+      testNextItem = (.) (== 0) <$> getNextModVal
       getNextKey =
         (.)
           <$> (bool <$> falseMonkey <*> trueMonkey)
@@ -69,11 +88,12 @@ parseKey = readMay
          . fmap (filter (/= ':'))
          . headMay
 
-parseItems :: [Line] -> Maybe [Item]
-parseItems = fmap (mapMaybe readMay)
-           . fmap (splitOn ", ")
-           . stripPrefix "  Starting items: "
-           <=< flip atMay 1
+parseItems :: [Divisor] -> [Line] -> Maybe [Item]
+parseItems divisors = fmap (map (intToItem divisors))
+                    . fmap (mapMaybe readMay)
+                    . fmap (splitOn ", ")
+                    . stripPrefix "  Starting items: "
+                    <=< flip atMay 1
 
 parseOperation :: [Line] -> Maybe (Int -> Int)
 parseOperation = parseOperation' <=< flip atMay 2
@@ -86,17 +106,14 @@ parseOperation' s =
        ["Operation:", "new", "=", "old", "*", numStr] -> (*) <$> readMay numStr
        _ -> Nothing
 
-parseTest :: [Line] -> Maybe (Int -> Bool)
-parseTest = parseTest' <=< flip atMay 3
+parseDivisor :: [Line] -> Maybe Int
+parseDivisor = parseDivisor' <=< flip atMay 3
 
-parseTest' :: Line -> Maybe (Int -> Bool)
-parseTest' s =
+parseDivisor' :: Line -> Maybe Int
+parseDivisor' s =
   case (words s) of
-       ["Test:", "divisible", "by", numStr] -> divides <$> readMay numStr
+       ["Test:", "divisible", "by", numStr] -> readMay numStr
        _ -> Nothing
-
-divides :: Int -> Int -> Bool
-divides q n = n `mod` q == 0
 
 parseTrueMonkey :: [Line] -> Maybe IntMap.Key
 parseTrueMonkey = parseTrueMonkey' <=< flip atMay 4
@@ -116,9 +133,9 @@ parseFalseMonkey' s =
        ["If", "false:", "throw", "to", "monkey", numStr] -> readMay numStr
        _ -> Nothing
 
--- Part 1
-part1 :: IntMap Monkey -> Int
-part1 = monkeyBusiness . doRounds 20
+-- Part 2
+part2 :: IntMap Monkey -> Int
+part2 = monkeyBusiness . doRounds 10000
 
 monkeyBusiness :: IntMap Monkey -> Int
 monkeyBusiness =
