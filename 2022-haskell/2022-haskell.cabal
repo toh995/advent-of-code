@@ -23,10 +23,12 @@ executable 2022-haskell
         Day08
         Day09
         Day10
+        Day11.Part01
     build-depends:
         base ^>=4.17.0.0,
-        ghc,
         containers ^>=0.6.6,
+        ghc,
+        safe ^>=0.3.19,
         split ^>=0.2.3.5
     hs-source-dirs:   app
     default-language: GHC2021
