@@ -26,6 +26,7 @@ executable 2022-haskell
         Day11.Part01
         Day11.Part02
         Day12
+        Day13
     build-depends:
         base ^>=4.17.0.0,
         containers ^>=0.6.6,
