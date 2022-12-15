@@ -27,8 +27,10 @@ executable 2022-haskell
         Day11.Part02
         Day12
         Day13
+        Day14
     build-depends:
         base ^>=4.17.0.0,
+        composition ^>=1.0.2.2,
         containers ^>=0.6.6,
         ghc,
         hashable ^>=1.4.1.0,
@@ -37,3 +39,4 @@ executable 2022-haskell
         unordered-containers ^>=0.2.19.1
     hs-source-dirs:   app
     default-language: GHC2021
+    default-extensions: MultiWayIf
