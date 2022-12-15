@@ -28,12 +28,15 @@ executable 2022-haskell
         Day12
         Day13
         Day14
+        Day15
     build-depends:
         base ^>=4.17.0.0,
         composition ^>=1.0.2.2,
         containers ^>=0.6.6,
         ghc,
         hashable ^>=1.4.1.0,
+        megaparsec ^>=9.3.0,
+        range ^>=0.3.0.2,
         safe ^>=0.3.19,
         split ^>=0.2.3.5,
         unordered-containers ^>=0.2.19.1
