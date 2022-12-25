@@ -30,6 +30,7 @@ executable 2022-haskell
         Day14
         Day15
         Day16
+        Day17
         Day18
     build-depends:
         base ^>=4.17.0.0,
@@ -41,7 +42,8 @@ executable 2022-haskell
         range ^>=0.3.0.2,
         safe ^>=0.3.19,
         split ^>=0.2.3.5,
-        unordered-containers ^>=0.2.19.1
+        unordered-containers ^>=0.2.19.1,
+        vector ^>=0.13.0.0
     hs-source-dirs:   app
     default-language: GHC2021
     default-extensions: MultiWayIf
