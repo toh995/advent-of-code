@@ -41,8 +41,6 @@ blueprintParser = do
   blueprintId <- string "Blueprint " *> L.decimal
   _ <- string ": "
 
-  -- oreRobotCostParser
-
   let parsers = [
                   oreRobotCostParser,
                   clayRobotCostParser,
