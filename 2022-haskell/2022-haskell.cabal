@@ -32,6 +32,7 @@ executable 2022-haskell
         Day16
         Day17
         Day18
+        Day19
     build-depends:
         base ^>=4.17.0.0,
         composition ^>=1.0.2.2,

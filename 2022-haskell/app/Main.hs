@@ -1,8 +1,8 @@
 module Main where
 
-import Day17 hiding (main)
-import qualified Day17
+import Day19 hiding (main)
+import qualified Day19
 
 main :: IO ()
 main = do
-  Day17.main
+  Day19.main
