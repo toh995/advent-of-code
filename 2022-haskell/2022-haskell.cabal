@@ -28,6 +28,7 @@ common deps
 
 common app-modules
     other-modules:
+        Data.Counter
         Day01
         Day02
         Day03
@@ -51,6 +52,7 @@ common app-modules
         Day20
         Day21.Part01
         Day22
+        Day23
     
 executable 2022-haskell
     import: app-modules, deps, haskell-config
@@ -64,3 +66,5 @@ test-suite test-2022-haskell
         hspec-discover:hspec-discover ^>=2.10.8
     hs-source-dirs: app, test
     main-is: Spec.hs
+    other-modules:
+        Day23Spec
