@@ -55,6 +55,7 @@ common app-modules
         Day22
         Day23
         Day24
+        Day25
     
 executable 2022-haskell
     import: app-modules, deps, haskell-config
@@ -71,3 +72,4 @@ test-suite test-2022-haskell
     other-modules:
         Day23Spec
         Day24Spec
+        Day25Spec
