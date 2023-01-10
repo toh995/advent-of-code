@@ -84,4 +84,4 @@ spec = do
     decimalToSnafu 37 `shouldBe` "122"
 
   it "part1 works" $ do
-    part1 sampleLines == "2=-1=0"
+    part1 sampleLines `shouldBe` "2=-1=0"
