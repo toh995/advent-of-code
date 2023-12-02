@@ -1,0 +1,44 @@
+cabal-version:      3.4
+name:               2023haskell
+version:            0.1.0.0
+build-type:         Simple
+
+common haskell-config
+  ghc-options: -Wall
+  default-language: GHC2021
+
+library
+  import: haskell-config
+  build-depends:
+      base >=4.19.0.0
+    , ghc >=9.8.1
+    , megaparsec >=9.6.1
+    , safe >=0.3.19
+  hs-source-dirs: src
+  exposed-modules:
+    Day01.Main
+    Day01.Part01
+    Day01.Part02
+    Util.Types
+
+executable 2023haskell
+  import: haskell-config
+  build-depends:
+      2023haskell
+    , base >=4.19.0.0
+  hs-source-dirs: app
+  main-is: Main.hs
+
+test-suite test-2022-haskell
+  import: haskell-config
+  type: exitcode-stdio-1.0
+  build-tool-depends:
+    hspec-discover:hspec-discover >= 2.11.7,
+  build-depends:
+      2023haskell
+    , base >=4.19.0.0
+    , hspec >= 2.11.7
+  hs-source-dirs: test
+  main-is: Spec.hs
+  other-modules:
+    Day01.Part02Spec
