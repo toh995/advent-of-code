@@ -14,12 +14,14 @@ library
     , ghc >=9.8.1
     , megaparsec >=9.6.1
     , safe >=0.3.19
+    , unordered-containers >=0.2.19.1
   hs-source-dirs: src
   exposed-modules:
     Day01.Main
     Day01.Part01
     Day01.Part02
     Day02.Main
+    Day03.Main
     Util.Types
 
 executable 2023haskell
