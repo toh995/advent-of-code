@@ -5,12 +5,14 @@ build-type:         Simple
 
 common haskell-config
   ghc-options: -Wall
+  default-extensions: MultiWayIf
   default-language: GHC2021
 
 library
   import: haskell-config
   build-depends:
       base >=4.19.0.0
+    , containers >=0.6.8
     , ghc >=9.8.1
     , megaparsec >=9.6.1
     , safe >=0.3.19
@@ -22,6 +24,9 @@ library
     Day01.Part02
     Day02.Main
     Day03.Main
+    Day04.Main
+    Day04.Part01
+    Day04.Part02
     Util.Types
 
 executable 2023haskell

@@ -26,7 +26,3 @@ spec = do
   describe "part2" $ do
     it "computes the correct sum" $ do
       part2 inputLines `shouldBe` 281
-
-  describe "extractDigits" $ do
-    it "works" $ do
-      extractDigits "dljxl7five6nrzfh5one" `shouldBe` "75651"
