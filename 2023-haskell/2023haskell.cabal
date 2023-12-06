@@ -11,9 +11,9 @@ common haskell-config
 library
   import: haskell-config
   build-depends:
-      base >=4.19.0.0
-    , containers >=0.6.8
-    , ghc >=9.8.1
+      base >=4.17.2.1
+    , containers >=0.6.7
+    , ghc >=9.4.8
     , megaparsec >=9.6.1
     , safe >=0.3.19
     , unordered-containers >=0.2.19.1
@@ -27,13 +27,14 @@ library
     Day04.Main
     Day04.Part01
     Day04.Part02
+    Day06.Main
     Util.Types
 
 executable 2023haskell
   import: haskell-config
   build-depends:
       2023haskell
-    , base >=4.19.0.0
+    , base >=4.17.2.1
   hs-source-dirs: app
   main-is: Main.hs
 
@@ -44,9 +45,10 @@ test-suite test-2022-haskell
     hspec-discover:hspec-discover >= 2.11.7,
   build-depends:
       2023haskell
-    , base >=4.19.0.0
+    , base >=4.17.2.1
     , hspec >= 2.11.7
   hs-source-dirs: test
   main-is: Spec.hs
   other-modules:
     Day01.Part02Spec
+    Day06.MainSpec
