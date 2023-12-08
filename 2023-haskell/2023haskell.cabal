@@ -15,7 +15,9 @@ library
     , containers >=0.6.7
     , ghc >=9.4.8
     , hashable >=1.4.3.0
+    , inflist >=0.0.1
     , megaparsec >=9.6.1
+    , monad-loops >=0.4.3
     , safe >=0.3.19
     , transformers >=0.5.6.2
     , unordered-containers >=0.2.19.1
@@ -36,6 +38,8 @@ library
     Day07.Main
     Day07.Part01
     Day07.Part02
+    Day08.Main
+    Day08.Part02
     Util.Types
 
 executable 2023haskell
@@ -57,6 +61,7 @@ test-suite test-2022-haskell
     , ghc >=9.4.8
     , hspec >= 2.11.7
     , megaparsec >=9.6.1
+    , unordered-containers >=0.2.19.1
   hs-source-dirs: test
   main-is: Spec.hs
   other-modules:
@@ -65,3 +70,4 @@ test-suite test-2022-haskell
     Day06.MainSpec
     Day07.Part01Spec
     Day07.Part02Spec
+    Day08.Part02Spec
