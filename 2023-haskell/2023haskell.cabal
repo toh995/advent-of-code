@@ -46,6 +46,7 @@ library
     Day11.Main
     Day11.Part01
     Day11.Part02
+    Day15.Main
     Day16.Main
     Util.Types
 
@@ -65,6 +66,7 @@ test-suite test-2022-haskell
   build-depends:
       2023haskell
     , base >=4.17.2.1
+    , containers >=0.6.7
     , ghc >=9.4.8
     , hspec >= 2.11.7
     , megaparsec >=9.6.1
@@ -81,3 +83,4 @@ test-suite test-2022-haskell
     Day09.MainSpec
     Day10.MainSpec
     Day11.Part01Spec
+    Day15.MainSpec
