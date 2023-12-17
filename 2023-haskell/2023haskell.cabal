@@ -20,6 +20,7 @@ library
     , memoize >=1.1.2
     , monad-loops >=0.4.3
     , safe >=0.3.19
+    , search-algorithms >=0.3.2
     , split >=0.2.4
     , transformers >=0.5.6.2
     , unordered-containers >=0.2.19.1
@@ -51,6 +52,7 @@ library
     Day13.Main
     Day15.Main
     Day16.Main
+    Day17.Main
     Util.Types
 
 executable 2023haskell
@@ -89,3 +91,4 @@ test-suite test-2022-haskell
     Day12.MainSpec
     Day13.MainSpec
     Day15.MainSpec
+    Day17.MainSpec
