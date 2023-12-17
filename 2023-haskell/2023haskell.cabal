@@ -17,6 +17,7 @@ library
     , hashable >=1.4.3.0
     , inflist >=0.0.1
     , megaparsec >=9.6.1
+    , memoize >=1.1.2
     , monad-loops >=0.4.3
     , safe >=0.3.19
     , split >=0.2.4
@@ -46,6 +47,7 @@ library
     Day11.Main
     Day11.Part01
     Day11.Part02
+    Day12.Main
     Day15.Main
     Day16.Main
     Util.Types
@@ -83,4 +85,5 @@ test-suite test-2022-haskell
     Day09.MainSpec
     Day10.MainSpec
     Day11.Part01Spec
+    Day12.MainSpec
     Day15.MainSpec
