@@ -54,6 +54,9 @@ library
     Day15.Main
     Day16.Main
     Day17.Main
+    Day19.Main
+    Day19.Part01
+    Day19.Part02
     Util.Types
 
 executable 2023haskell
@@ -94,3 +97,4 @@ test-suite test-2022-haskell
     Day14.MainSpec
     Day15.MainSpec
     Day17.MainSpec
+    Day19.Part02Spec
