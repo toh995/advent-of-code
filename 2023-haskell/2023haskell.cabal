@@ -60,6 +60,10 @@ library
     Day19.Main
     Day19.Part01
     Day19.Part02
+    Day21.Main
+    Day21.Part01
+    Day21.Part02
+    Day21.Part022
     Util.Types
 
 executable 2023haskell
@@ -102,3 +106,5 @@ test-suite test-2022-haskell
     Day17.MainSpec
     Day18.Part02Spec
     Day19.Part02Spec
+    Day21.Part01Spec
+    Day21.Part02Spec
