@@ -54,6 +54,9 @@ library
     Day15.Main
     Day16.Main
     Day17.Main
+    Day18.Main
+    Day18.Part01
+    Day18.Part02
     Day19.Main
     Day19.Part01
     Day19.Part02
@@ -97,4 +100,5 @@ test-suite test-2022-haskell
     Day14.MainSpec
     Day15.MainSpec
     Day17.MainSpec
+    Day18.Part02Spec
     Day19.Part02Spec
