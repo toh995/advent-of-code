@@ -5,7 +5,9 @@ build-type:         Simple
 
 common haskell-config
   ghc-options: -Wall
-  default-extensions: MultiWayIf
+  default-extensions:
+    MultiWayIf
+    StrictData
   default-language: GHC2021
 
 library
@@ -60,6 +62,7 @@ library
     Day19.Main
     Day19.Part01
     Day19.Part02
+    Day20.Main
     Day21.Main
     Day21.Part01
     Day21.Part02
@@ -106,5 +109,6 @@ test-suite test-2022-haskell
     Day17.MainSpec
     Day18.Part02Spec
     Day19.Part02Spec
+    Day20.MainSpec
     Day21.Part01Spec
     Day21.Part02Spec
