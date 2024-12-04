@@ -1,0 +1,36 @@
+cabal-version:      3.4
+name:               2024haskell
+version:            0.1.0.0
+build-type:         Simple
+
+common haskell-config
+  ghc-options: -Wall
+  default-extensions:
+    LambdaCase
+  default-language: GHC2021
+
+library
+  import: haskell-config
+  build-depends:    
+      base ^>=4.17.2.1
+    , hashable ^>=1.4.3.0
+    , megaparsec >=9.7.0
+    , mtl >=2.3.1
+    , unordered-containers >=0.2.20
+
+  hs-source-dirs:   src
+  exposed-modules:
+    Day01.Main
+  other-modules:
+    Day01.Parse
+    Day01.Part01
+    Day01.Part02
+    Day01.Types
+
+executable 2024haskell
+  import: haskell-config
+  build-depends:
+      2024haskell
+    , base ^>=4.17.2.1
+  hs-source-dirs:   app
+  main-is:          Main.hs
