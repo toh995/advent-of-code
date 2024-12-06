@@ -7,6 +7,7 @@ common haskell-config
   ghc-options: -Wall
   default-extensions:
     LambdaCase
+    OverloadedRecordDot
   default-language: GHC2021
 
 library
@@ -16,6 +17,7 @@ library
     , hashable ^>=1.4.3.0
     , megaparsec >=9.7.0
     , mtl >=2.3.1
+    , regex-tdfa >=1.3.2.2
     , unordered-containers >=0.2.20
 
   hs-source-dirs:   src
@@ -23,6 +25,8 @@ library
     Day01.Main
     Day02.Main
     Day03.Main
+    Day04.Main
+    Day04.Matrix
   other-modules:
     Day01.Parse
     Day01.Part01
@@ -36,3 +40,19 @@ executable 2024haskell
     , base ^>=4.17.2.1
   hs-source-dirs:   app
   main-is:          Main.hs
+
+test-suite test-2024-haskell
+  import: haskell-config
+  type: exitcode-stdio-1.0
+  build-tool-depends:
+    hspec-discover:hspec-discover >= 2.11.10,
+  build-depends:
+      2024haskell
+    , base ^>=4.17.2.1
+    , hspec >= 2.11.10
+    , unordered-containers >=0.2.20
+  hs-source-dirs: test
+  main-is: Spec.hs
+  other-modules:
+    Day04.MainSpec
+    Day04.MatrixSpec
