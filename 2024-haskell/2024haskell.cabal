@@ -22,6 +22,7 @@ library
   exposed-modules:
     Day01.Main
     Day02.Main
+    Day03.Main
   other-modules:
     Day01.Parse
     Day01.Part01
