@@ -30,6 +30,7 @@ library
     Day04.Main
     Day04.Matrix
     Day05.Main
+    Day06.Main
   other-modules:
     Day01.Parse
     Day01.Part01
