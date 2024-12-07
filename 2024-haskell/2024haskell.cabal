@@ -31,11 +31,16 @@ library
     Day04.Matrix
     Day05.Main
     Day06.Main
+    Day07.Main
+    Day07.Part1
+    Day07.Part2
   other-modules:
     Day01.Parse
     Day01.Part01
     Day01.Part02
     Day01.Types
+    Day07.Parse
+    Day07.Types
 
 executable 2024haskell
   import: haskell-config
@@ -60,3 +65,4 @@ test-suite test-2024-haskell
   other-modules:
     Day04.MainSpec
     Day04.MatrixSpec
+    Day07.Part1Spec

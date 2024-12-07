@@ -1,7 +1,6 @@
 module Day04.MatrixSpec (spec) where
 
 import Data.HashMap.Lazy qualified as HashMap
-import Data.HashSet qualified as HashSet
 import Data.List
 import Test.Hspec
 
