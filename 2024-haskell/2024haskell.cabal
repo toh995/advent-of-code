@@ -34,6 +34,7 @@ library
     Day07.Main
     Day07.Part1
     Day07.Part2
+    Day08.Main
   other-modules:
     Day01.Parse
     Day01.Part01
@@ -66,3 +67,4 @@ test-suite test-2024-haskell
     Day04.MainSpec
     Day04.MatrixSpec
     Day07.Part1Spec
+    Day08.MainSpec
