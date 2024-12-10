@@ -8,6 +8,7 @@ common haskell-config
   default-extensions:
     DuplicateRecordFields
     LambdaCase
+    MultiWayIf
     OverloadedRecordDot
   default-language: GHC2021
 
@@ -15,6 +16,7 @@ library
   import: haskell-config
   build-depends:    
       base ^>=4.17.2.1
+    , deque ^>=0.4.4.1
     , hashable ^>=1.4.3.0
     , megaparsec >=9.7.0
     , mtl >=2.3.1
@@ -35,6 +37,11 @@ library
     Day07.Part1
     Day07.Part2
     Day08.Main
+    Day09.Main
+    Day09.Parse
+    Day09.Part1
+    Day09.Part2
+    Day09.Types
   other-modules:
     Day01.Parse
     Day01.Part01
@@ -68,3 +75,6 @@ test-suite test-2024-haskell
     Day04.MatrixSpec
     Day07.Part1Spec
     Day08.MainSpec
+    Day09.ParseSpec
+    Day09.Part1Spec
+    Day09.Part2Spec
