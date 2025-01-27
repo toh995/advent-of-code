@@ -42,6 +42,9 @@ library
     Day09.Part1
     Day09.Part2
     Day09.Types
+    Day10.Main
+    Day10.Matrix
+    Day10.Parse
   other-modules:
     Day01.Parse
     Day01.Part01
@@ -78,3 +81,5 @@ test-suite test-2024-haskell
     Day09.ParseSpec
     Day09.Part1Spec
     Day09.Part2Spec
+    Day10.MainSpec
+    Day10.ParseSpec
