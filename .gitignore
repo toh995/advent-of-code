@@ -12,3 +12,6 @@
 
 # haskell stuff
 **/dist-newstyle/*
+
+# koka stuff
+.koka/*
