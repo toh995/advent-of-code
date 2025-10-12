@@ -1,6 +1,4 @@
-def main():
-    print("Hello from 2019-python!")
-
+from src.day05.main import main
 
 if __name__ == "__main__":
     main()

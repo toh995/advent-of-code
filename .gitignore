@@ -15,3 +15,6 @@
 
 # koka stuff
 .koka/*
+
+# python stuff
+__pycache__
