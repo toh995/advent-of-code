@@ -1,4 +1,4 @@
-from src.day07.main import main
+from src.day08.main import main
 
 if __name__ == "__main__":
     main()
