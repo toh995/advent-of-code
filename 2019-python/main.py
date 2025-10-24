@@ -1,4 +1,4 @@
-from src.aoc.day11.main import main
+from src.aoc.day12.main import main
 
 if __name__ == "__main__":
     main()
