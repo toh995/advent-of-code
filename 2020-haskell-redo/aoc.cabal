@@ -12,6 +12,7 @@ library
       Day01.Main
       Day02.Main
       Day03.Main
+      Day04.Main
     -- other-modules:
     -- other-extensions:
     build-depends:
@@ -20,6 +21,7 @@ library
       , containers
       , mtl
       , parsec
+      , text
     hs-source-dirs:   src
     default-language: Haskell2010
 
