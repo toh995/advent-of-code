@@ -11,6 +11,7 @@ library
     exposed-modules:
       Day01.Main
       Day02.Main
+      Day03.Main
     -- other-modules:
     -- other-extensions:
     build-depends:
