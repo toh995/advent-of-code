@@ -20,6 +20,7 @@ library
       Day08.Main
       Day09.Main
       Day10.Main
+      Day11.Main
     -- other-modules:
     -- other-extensions:
     build-depends:
