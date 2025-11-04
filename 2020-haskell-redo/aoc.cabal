@@ -17,6 +17,7 @@ library
       Day06.Main
       Day07.Graph
       Day07.Main
+      Day08.Main
     -- other-modules:
     -- other-extensions:
     build-depends:
