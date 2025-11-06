@@ -24,6 +24,9 @@ library
       Day12.Main
       Day12.Part1
       Day12.Part2
+      Day13.Main
+      Day13.Part1
+      Day13.Part2
     -- other-modules:
     -- other-extensions:
     build-depends:
