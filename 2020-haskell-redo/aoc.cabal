@@ -31,6 +31,7 @@ library
       Day14.Part1
       Day14.Part2
       Day15.Main
+      Day16.Main
     -- other-modules:
     -- other-extensions:
     build-depends:
