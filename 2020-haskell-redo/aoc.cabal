@@ -36,6 +36,7 @@ library
       Day18.Main
       Day18.Part1
       Day18.Part2
+      Day19.Main
     -- other-modules:
     -- other-extensions:
     build-depends:
