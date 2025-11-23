@@ -44,6 +44,7 @@ library
       Day22.Main
       Day23.Main
       Day24.Main
+      Day25.Main
     -- other-modules:
     -- other-extensions:
     build-depends:
