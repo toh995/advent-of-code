@@ -13,19 +13,19 @@ common haskell-config
 library
   import: haskell-config
   build-depends:
-      base >=4.17.2.1
-    , containers >=0.6.7
-    , ghc >=9.4.8
-    , hashable >=1.4.3.0
-    , inflist >=0.0.1
-    , megaparsec >=9.6.1
-    , memoize >=1.1.2
-    , monad-loops >=0.4.3
-    , safe >=0.3.19
-    , search-algorithms >=0.3.2
-    , split >=0.2.4
-    , transformers >=0.5.6.2
-    , unordered-containers >=0.2.19.1
+      base ^>=4.18.3.0
+    , containers
+    , ghc
+    , hashable
+    , inflist
+    , megaparsec
+    , memoize
+    , monad-loops
+    , safe
+    , search-algorithms
+    , split
+    , transformers
+    , unordered-containers
   hs-source-dirs: src
   exposed-modules:
     Day01.Main
