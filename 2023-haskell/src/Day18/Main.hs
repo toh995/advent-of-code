@@ -5,7 +5,5 @@ import Day18.Part02 qualified
 
 main :: IO ()
 main =
-  Day18.Part02.main
-
--- Day18.Part01.main
---   >> Day18.Part02.main
+    Day18.Part01.main
+        >> Day18.Part02.main

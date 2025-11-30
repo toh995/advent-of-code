@@ -21,6 +21,7 @@ library
     , megaparsec
     , memoize
     , monad-loops
+    , parsec
     , safe
     , search-algorithms
     , split
@@ -84,12 +85,13 @@ test-suite test-2022-haskell
     hspec-discover:hspec-discover >= 2.11.7,
   build-depends:
       2023haskell
-    , base >=4.17.2.1
-    , containers >=0.6.7
-    , ghc >=9.4.8
-    , hspec >= 2.11.7
-    , megaparsec >=9.6.1
-    , unordered-containers >=0.2.19.1
+    , base ^>=4.18.3.0
+    , containers
+    , ghc
+    , hspec
+    , megaparsec
+    , parsec
+    , unordered-containers
   hs-source-dirs: test
   main-is: Spec.hs
   other-modules:
