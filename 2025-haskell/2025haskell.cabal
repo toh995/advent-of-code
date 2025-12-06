@@ -12,6 +12,7 @@ library
     -- other-extensions:
     build-depends:    
         base ^>=4.18.3.0
+      , array
       , containers
       , parsec
     hs-source-dirs:   src
@@ -21,6 +22,7 @@ library
       , Day02.Main
       , Day03.Main
       , Day04.Main
+      , Day05.Main
 
 executable 2025haskell
     import:           warnings
