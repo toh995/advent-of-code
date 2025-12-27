@@ -29,6 +29,7 @@ library
       , Day09.Main
       , Day10.Main
       , Day11.Main
+      , Day12.Main
 
 executable 2025haskell
     import:           warnings
