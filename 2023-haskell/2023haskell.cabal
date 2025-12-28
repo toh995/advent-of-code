@@ -64,6 +64,7 @@ library
     Day19.Part01
     Day19.Part02
     Day20.Main
+    Day20.Part02
     Day21.Main
     Day21.Part01
     Day21.Part02
@@ -74,7 +75,7 @@ executable 2023haskell
   import: haskell-config
   build-depends:
       2023haskell
-    , base >=4.17.2.1
+    , base ^>=4.18.3.0
   hs-source-dirs: app
   main-is: Main.hs
 
