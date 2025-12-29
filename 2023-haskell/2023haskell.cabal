@@ -14,6 +14,7 @@ library
   import: haskell-config
   build-depends:
       base ^>=4.18.3.0
+    , array
     , containers
     , ghc
     , hashable
@@ -68,7 +69,6 @@ library
     Day21.Main
     Day21.Part01
     Day21.Part02
-    Day21.Part022
     Util.Types
 
 executable 2023haskell
