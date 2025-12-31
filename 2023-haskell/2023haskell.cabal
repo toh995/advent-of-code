@@ -69,6 +69,7 @@ library
     Day21.Main
     Day21.Part01
     Day21.Part02
+    Day22.Main
     Util.Types
 
 executable 2023haskell
