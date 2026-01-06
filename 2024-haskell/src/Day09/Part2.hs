@@ -3,7 +3,6 @@ module Day09.Part2 where
 import Control.Monad
 import Data.List
 import Data.Maybe
-import Debug.Trace
 import Safe
 
 import Day09.Types

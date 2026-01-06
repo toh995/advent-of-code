@@ -15,7 +15,7 @@ common haskell-config
 library
   import: haskell-config
   build-depends:    
-      base ^>=4.17.2.1
+      base ^>=4.18.3.0
     , deque ^>=0.4.4.1
     , hashable ^>=1.4.3.0
     , megaparsec >=9.7.0
@@ -57,7 +57,7 @@ executable 2024haskell
   import: haskell-config
   build-depends:
       2024haskell
-    , base ^>=4.17.2.1
+    , base ^>=4.18.3.0
   hs-source-dirs:   app
   main-is:          Main.hs
 
@@ -68,7 +68,7 @@ test-suite test-2024-haskell
     hspec-discover:hspec-discover >= 2.11.10,
   build-depends:
       2024haskell
-    , base ^>=4.17.2.1
+    , base ^>=4.18.3.0
     , hspec >= 2.11.10
     , unordered-containers >=0.2.20
   hs-source-dirs: test
