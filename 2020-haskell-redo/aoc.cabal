@@ -1,86 +1,89 @@
-cabal-version:      3.8
-name:               aoc
-version:            0.1.0.0
-build-type:         Simple
+cabal-version: 3.8
+name:          aoc
+version:       0.1.0.0
+build-type:    Simple
 
 common warnings
-    ghc-options: -Wall
+  ghc-options: -Wall
 
 library
-    import:           warnings
-    exposed-modules:
-      Day01.Main
-      Day02.Main
-      Day03.Main
-      Day04.Main
-      Day05.Main
-      Day06.Main
-      Day07.Graph
-      Day07.Main
-      Day08.Main
-      Day09.Main
-      Day10.Main
-      Day11.Main
-      Day12.Main
-      Day12.Part1
-      Day12.Part2
-      Day13.Main
-      Day13.Part1
-      Day13.Part2
-      Day14.Main
-      Day14.Part1
-      Day14.Part2
-      Day15.Main
-      Day16.Main
-      Day17.Main
-      Day18.Main
-      Day18.Part1
-      Day18.Part2
-      Day19.Main
-      Day20.Main
-      Day20.Part1
-      Day20.Part2
-      Day21.Main
-      Day22.Main
-      Day23.Main
-      Day24.Main
-      Day25.Main
-    -- other-modules:
-    -- other-extensions:
-    build-depends:
-        base ^>=4.18.3.0
-      , array
-      , containers
-      , mtl
-      , parsec
-      , text
-    hs-source-dirs:   src
-    default-language: Haskell2010
+  import:           warnings
+  exposed-modules:
+    Day01.Main
+    Day02.Main
+    Day03.Main
+    Day04.Main
+    Day05.Main
+    Day06.Main
+    Day07.Graph
+    Day07.Main
+    Day08.Main
+    Day09.Main
+    Day10.Main
+    Day11.Main
+    Day12.Main
+    Day12.Part1
+    Day12.Part2
+    Day13.Main
+    Day13.Part1
+    Day13.Part2
+    Day14.Main
+    Day14.Part1
+    Day14.Part2
+    Day15.Main
+    Day16.Main
+    Day17.Main
+    Day18.Main
+    Day18.Part1
+    Day18.Part2
+    Day19.Main
+    Day20.Main
+    Day20.Part1
+    Day20.Part2
+    Day21.Main
+    Day22.Main
+    Day23.Main
+    Day24.Main
+    Day25.Main
+
+  -- other-modules:
+  -- other-extensions:
+  build-depends:
+    , array
+    , base        ^>=4.18.3.0
+    , containers
+    , mtl
+    , parsec
+    , text
+
+  hs-source-dirs:   src
+  default-language: Haskell2010
 
 executable aoc
-    import:           warnings
-    main-is:          Main.hs
-    -- other-modules:
-    -- other-extensions:
-    build-depends:
-        base ^>=4.18.3.0
-      , aoc
+  import:           warnings
+  main-is:          Main.hs
 
-    hs-source-dirs:   app
-    default-language: Haskell2010
+  -- other-modules:
+  -- other-extensions:
+  build-depends:
+    , aoc
+    , base  ^>=4.18.3.0
+
+  hs-source-dirs:   app
+  default-language: Haskell2010
 
 test-suite aoc-test
-    import:           warnings
-    default-language: Haskell2010
-    -- other-extensions:
-    type:             exitcode-stdio-1.0
-    hs-source-dirs:   test
-    main-is:          Spec.hs
-    build-tool-depends:
-      hspec-discover:hspec-discover
-    build-depends:
-          base ^>=4.18.3.0
-        , aoc
-        , hspec
-    other-modules:
-      Day05.MainSpec
+  import:             warnings
+  default-language:   Haskell2010
+
+  -- other-extensions:
+  type:               exitcode-stdio-1.0
+  hs-source-dirs:     test
+  main-is:            Spec.hs
+  build-tool-depends: hspec-discover:hspec-discover
+  build-depends:
+    , aoc
+    , base   ^>=4.18.3.0
+    , hspec
+
+  other-modules:      Day05.MainSpec

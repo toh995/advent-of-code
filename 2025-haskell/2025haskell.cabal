@@ -1,44 +1,47 @@
-cabal-version:      3.4
-name:               2025haskell
-version:            0.1.0.0
-build-type:         Simple
+cabal-version: 3.4
+name:          2025haskell
+version:       0.1.0.0
+build-type:    Simple
 
 common warnings
-    ghc-options: -Wall
+  ghc-options: -Wall
 
 library
-    import:           warnings
-    -- other-modules:
-    -- other-extensions:
-    build-depends:    
-        base ^>=4.18.3.0
-      , array
-      , containers
-      , parsec
-    hs-source-dirs:   src
-    default-language: Haskell2010
-    exposed-modules:
-        Day01.Main
-      , Day02.Main
-      , Day03.Main
-      , Day04.Main
-      , Day05.Main
-      , Day06.Main
-      , Day07.Main
-      , Day08.Main
-      , Day09.Main
-      , Day10.Main
-      , Day11.Main
-      , Day12.Main
+  import:           warnings
+
+  -- other-modules:
+  -- other-extensions:
+  build-depends:
+    , array
+    , base        ^>=4.18.3.0
+    , containers
+    , parsec
+
+  hs-source-dirs:   src
+  default-language: Haskell2010
+  exposed-modules:
+    Day01.Main
+    Day02.Main
+    Day03.Main
+    Day04.Main
+    Day05.Main
+    Day06.Main
+    Day07.Main
+    Day08.Main
+    Day09.Main
+    Day10.Main
+    Day11.Main
+    Day12.Main
 
 executable 2025haskell
-    import:           warnings
-    main-is:          Main.hs
-    -- other-modules:
-    -- other-extensions:
-    build-depends:
-        base ^>=4.18.3.0,
-        2025haskell
+  import:           warnings
+  main-is:          Main.hs
 
-    hs-source-dirs:   app
-    default-language: Haskell2010
+  -- other-modules:
+  -- other-extensions:
+  build-depends:
+    , 2025haskell
+    , base         ^>=4.18.3.0
+
+  hs-source-dirs:   app
+  default-language: Haskell2010

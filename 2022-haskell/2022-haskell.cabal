@@ -1,75 +1,72 @@
-cabal-version:      3.0
-name:               2022haskell
-version:            0.1.0.0
-build-type:         Simple
-data-files:         data/*.txt
+cabal-version: 3.0
+name:          2022haskell
+version:       0.1.0.0
+build-type:    Simple
+data-files:    data/*.txt
 
 common haskell-config
-    ghc-options:
-      -Wall
-      -fno-warn-orphans
-    default-extensions: MultiWayIf
-    default-language: GHC2021
+  ghc-options:        -Wall -fno-warn-orphans
+  default-extensions: MultiWayIf
+  default-language:   GHC2021
 
 common deps
-    build-depends:
-        base ^>=4.17.0.0,
-        composition ^>=1.0.2.2,
-        containers ^>=0.6.6,
-        ghc,
-        hashable ^>=1.4.1.0,
-        heap ^>=1.0.4,
-        hspec ^>=2.10.8,
-        megaparsec ^>=9.3.0,
-        range ^>=0.3.0.2,
-        safe ^>=0.3.19,
-        split ^>=0.2.3.5,
-        unordered-containers ^>=0.2.19.1,
-        vector ^>=0.13.0.0
+  build-depends:
+    , base                  ^>=4.17.0.0
+    , composition           ^>=1.0.2.2
+    , containers            ^>=0.6.6
+    , ghc
+    , hashable              ^>=1.4.1.0
+    , heap                  ^>=1.0.4
+    , hspec                 ^>=2.10.8
+    , megaparsec            ^>=9.3.0
+    , range                 ^>=0.3.0.2
+    , safe                  ^>=0.3.19
+    , split                 ^>=0.2.3.5
+    , unordered-containers  ^>=0.2.19.1
+    , vector                ^>=0.13.0.0
 
 common app-modules
-    other-modules:
-        Data.Counter
-        Day01
-        Day02
-        Day03
-        Day04
-        Day05
-        Day06
-        Day07
-        Day08
-        Day09
-        Day10
-        Day11.Part01
-        Day11.Part02
-        Day12
-        Day13
-        Day14
-        Day15
-        Day16
-        Day17
-        Day18
-        Day19
-        Day20
-        Day21.Part01
-        Day22
-        Day23
-        Day24
-        Day25
-    
+  other-modules:
+    Data.Counter
+    Day01
+    Day02
+    Day03
+    Day04
+    Day05
+    Day06
+    Day07
+    Day08
+    Day09
+    Day10
+    Day11.Part01
+    Day11.Part02
+    Day12
+    Day13
+    Day14
+    Day15
+    Day16
+    Day17
+    Day18
+    Day19
+    Day20
+    Day21.Part01
+    Day22
+    Day23
+    Day24
+    Day25
+
 executable 2022-haskell
-    import: app-modules, deps, haskell-config
-    hs-source-dirs:   app
-    main-is: Main.hs
+  import:         app-modules, deps, haskell-config
+  hs-source-dirs: app
+  main-is:        Main.hs
 
 test-suite test-2022-haskell
-    import: app-modules, deps, haskell-config
-    type: exitcode-stdio-1.0
-    build-tool-depends:
-        hspec-discover:hspec-discover ^>=2.10.8
-    hs-source-dirs: app, test
-    main-is: Spec.hs
-    other-modules:
-        Day23Spec
-        Day24Spec
-        Day25Spec
+  import:             app-modules, deps, haskell-config
+  type:               exitcode-stdio-1.0
+  build-tool-depends: hspec-discover:hspec-discover ^>=2.10.8
+  hs-source-dirs:     app test
+  main-is:            Spec.hs
+  other-modules:
+    Day23Spec
+    Day24Spec
+    Day25Spec

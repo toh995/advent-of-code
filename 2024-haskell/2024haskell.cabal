@@ -1,30 +1,31 @@
-cabal-version:      3.4
-name:               2024haskell
-version:            0.1.0.0
-build-type:         Simple
+cabal-version: 3.4
+name:          2024haskell
+version:       0.1.0.0
+build-type:    Simple
 
 common haskell-config
-  ghc-options: -Wall
+  ghc-options:        -Wall
   default-extensions:
     DuplicateRecordFields
     LambdaCase
     MultiWayIf
     OverloadedRecordDot
-  default-language: GHC2021
+
+  default-language:   GHC2021
 
 library
-  import: haskell-config
-  build-depends:    
-      base ^>=4.18.3.0
-    , deque ^>=0.4.4.1
-    , hashable ^>=1.4.3.0
-    , megaparsec >=9.7.0
-    , mtl >=2.3.1
-    , regex-tdfa >=1.3.2.2
-    , safe >=0.3.21
-    , unordered-containers >=0.2.20
+  import:          haskell-config
+  build-depends:
+    , base                  ^>=4.18.3.0
+    , deque                 ^>=0.4.4.1
+    , hashable              ^>=1.4.3.0
+    , megaparsec            >=9.7.0
+    , mtl                   >=2.3.1
+    , regex-tdfa            >=1.3.2.2
+    , safe                  >=0.3.21
+    , unordered-containers  >=0.2.20
 
-  hs-source-dirs:   src
+  hs-source-dirs:  src
   exposed-modules:
     Day01.Main
     Day02.Main
@@ -45,6 +46,7 @@ library
     Day10.Main
     Day10.Matrix
     Day10.Parse
+
   other-modules:
     Day01.Parse
     Day01.Part01
@@ -54,25 +56,26 @@ library
     Day07.Types
 
 executable 2024haskell
-  import: haskell-config
+  import:         haskell-config
   build-depends:
-      2024haskell
-    , base ^>=4.18.3.0
-  hs-source-dirs:   app
-  main-is:          Main.hs
+    , 2024haskell
+    , base         ^>=4.18.3.0
+
+  hs-source-dirs: app
+  main-is:        Main.hs
 
 test-suite test-2024-haskell
-  import: haskell-config
-  type: exitcode-stdio-1.0
-  build-tool-depends:
-    hspec-discover:hspec-discover >= 2.11.10,
+  import:             haskell-config
+  type:               exitcode-stdio-1.0
+  build-tool-depends: hspec-discover:hspec-discover >=2.11.10
   build-depends:
-      2024haskell
-    , base ^>=4.18.3.0
-    , hspec >= 2.11.10
-    , unordered-containers >=0.2.20
-  hs-source-dirs: test
-  main-is: Spec.hs
+    , 2024haskell
+    , base                  ^>=4.18.3.0
+    , hspec                 >=2.11.10
+    , unordered-containers  >=0.2.20
+
+  hs-source-dirs:     test
+  main-is:            Spec.hs
   other-modules:
     Day04.MainSpec
     Day04.MatrixSpec
