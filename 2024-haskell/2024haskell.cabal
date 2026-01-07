@@ -16,6 +16,7 @@ common haskell-config
 library
   import:          haskell-config
   build-depends:
+    , array
     , base                  ^>=4.18.3.0
     , containers
     , deque
@@ -48,6 +49,7 @@ library
     Day10.Matrix
     Day10.Parse
     Day11.Main
+    Day12.Main
 
   other-modules:
     Day01.Parse
